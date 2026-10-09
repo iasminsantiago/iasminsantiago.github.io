@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iasmin Santiago | Engenheira de Dados e Analytics</title>
+<meta name="description" content="Portfólio de Iasmin Santiago: Engenheira de Dados e Analytics. Python, SQL, Databricks, dbt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2A2533;--gray:#645F70;--line:#DDD6E8;--lilac:#F3EFFA;--lilac2:#E4DAF5;--pink:#B8307A;--pink-d:#8F2260;--white:#fff;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--pink-d)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:1rem;min-height:56px;justify-content:space-between}
+.nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;overflow-x:auto}
+.nav a{text-decoration:none;color:var(--gray);font-weight:600;font-size:.95rem;white-space:nowrap}
+.nav a:hover{color:var(--pink-d)}
+.lang{border:1.5px solid var(--pink);background:none;color:var(--pink-d);font:600 .85rem "Source Sans 3",sans-serif;border-radius:99px;padding:.3rem .8rem;cursor:pointer;flex:none}
+.lang:hover{background:var(--pink);color:#fff}
+.hero{background:linear-gradient(180deg,var(--lilac) 0%,var(--white) 100%);padding:4.5rem 0 3.5rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:700;letter-spacing:-.02em;max-width:14ch}
+.hero .role{font:500 clamp(1.2rem,2.8vw,1.7rem)/1.3 "Bricolage Grotesque",sans-serif;color:var(--pink-d);margin:1rem 0 .4rem}
+.hero .stack{color:var(--gray);margin:0 0 2rem}
+.pipe{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0 0 2rem;padding:0;list-style:none}
+.pipe li{display:flex;align-items:center;gap:.5rem}
+.pipe .n{background:var(--white);border:1.5px solid var(--lilac2);border-radius:10px;padding:.45rem .85rem;font-weight:600;font-size:.95rem;color:var(--ink);animation:lit 2.4s ease both;animation-delay:calc(var(--i)*.45s)}
+.pipe li:not(:last-child)::after{content:"";width:1.6rem;height:2px;background:var(--lilac2);animation:line 2.4s ease both;animation-delay:calc(var(--i)*.45s)}
+@keyframes lit{0%,15%{border-color:var(--lilac2);background:var(--white)}40%,100%{border-color:var(--pink);background:#FBEFF6}}
+@keyframes line{0%,15%{background:var(--lilac2)}40%,100%{background:var(--pink)}}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.65rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--pink)}
+.btn.p{background:var(--pink);color:#fff}
+.btn.p:hover{background:var(--pink-d)}
+.btn.s{color:var(--pink-d)}
+.btn.s:hover{background:var(--lilac)}
+.note{color:var(--gray);font-size:.95rem;margin-top:1.5rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.25rem}
+.about{display:grid;gap:2rem;grid-template-columns:1.4fr 1fr}
+.about p{margin:0 0 1rem;max-width:62ch}
+.facts{background:var(--lilac);border-radius:14px;padding:1.4rem;align-self:start}
+.facts h3{font-size:1.1rem;margin-bottom:.6rem}
+.facts ul{margin:0;padding-left:1.1rem;color:var(--gray)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{border:1px solid var(--line);border-radius:14px;padding:1.25rem;background:var(--white)}
+.card h3{font-size:1.15rem;margin-bottom:.4rem}
+.card p{margin:0;color:var(--gray);font-size:1rem}
+.card.hl{background:var(--lilac);border-color:var(--lilac2);grid-column:1/-1}
+.card.hl h3{color:var(--pink-d)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 0;padding:0;list-style:none}
+.chips li{background:var(--lilac);border:1px solid var(--lilac2);border-radius:99px;padding:.3rem .85rem;font-weight:600;font-size:.95rem}
+.skills h3{font-size:1.1rem;margin:1.4rem 0 .2rem}
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--lilac2)}
+.tl li{position:relative;padding:0 0 1.8rem 1rem}
+.tl li::before{content:"";position:absolute;left:-1.4rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--pink);transform:translateX(-5px);box-shadow:0 0 0 4px var(--white)}
+.tl h3{font-size:1.2rem}
+.tl .when{color:var(--pink-d);font-weight:600;font-size:.95rem}
+.tl ul{margin:.5rem 0 0;padding-left:1.1rem;color:var(--gray);max-width:68ch}
+.links{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));margin-top:1rem}
+.links a{display:block;padding:1rem 1.2rem;border:1.5px solid var(--lilac2);border-radius:12px;text-decoration:none;color:var(--ink);font-weight:600}
+.links a span{display:block;font-weight:400;color:var(--gray);font-size:.95rem;overflow-wrap:anywhere}
+.links a:hover{border-color:var(--pink);background:var(--lilac)}
+footer{background:var(--ink);color:#CFC8DA;padding:1.6rem 0;font-size:.95rem}
+@media(max-width:44rem){.about{grid-template-columns:1fr}.hero{padding-top:3rem}}
+@media(prefers-reduced-motion:reduce){.pipe .n,.pipe li::after{animation:none;border-color:var(--pink);background:#FBEFF6}.pipe li:not(:last-child)::after{background:var(--pink)}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<nav aria-label="Principal"><ul>
+<li><a href="#sobre" data-en="About me">Sobre mim</a></li>
+<li><a href="#certificacoes" data-en="Certifications">Certificações</a></li>
+<li><a href="#habilidades" data-en="Skills">Habilidades</a></li>
+<li><a href="#experiencia" data-en="Work Experience">Experiência</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contato" data-en="Contact">Contato</a></li>
+</ul></nav>
+<button class="lang" id="lang" type="button" aria-label="Switch language to English">EN</button>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+<h1 data-en="Hi, I'm Iasmin">Oi, eu sou Iasmin</h1>
+<p class="role" data-en="Data and Analytics Engineer">Engenheira de Dados e Analytics</p>
+<p class="stack">Python • SQL • Databricks • dbt</p>
+<ol class="pipe" aria-label="SQL Server, Databricks, dbt, Power BI">
+<li><span class="n" style="--i:0">SQL Server</span></li>
+<li><span class="n" style="--i:1">Databricks</span></li>
+<li><span class="n" style="--i:2">dbt</span></li>
+<li><span class="n" style="--i:3">Power BI</span></li>
+</ol>
+<div class="cta">
+<a class="btn p" href="#portfolio" data-en="See my work">Ver meu trabalho</a>
+<a class="btn s" href="#contato" data-en="Get in touch">Fale comigo</a>
+</div>
+<p class="note" data-en="🚧 Under construction. This is my personal portfolio.">🚧 Em construção. Este é o meu portfólio pessoal.</p>
+</div></div>
+
+<section id="sobre"><div class="wrap">
+<h2 data-en="About me">Sobre mim</h2>
+<div class="about">
+<div>
+<p data-en="I'm moving into Data Engineering and Analytics Engineering. I work on a Data &amp; AI team at Indicium, where I model data with dbt, build Power BI dashboards and support a governance project with queries in Snowflake.">Estou em transição para Engenharia de Dados e Analytics Engineering. Atuo em um time de Data &amp; AI na Indicium, onde modelo dados com dbt, construo dashboards em Power BI e apoio um projeto de governança com consultas em Snowflake.</p>
+<p data-en="Before that, I spent almost 4 years in financial and administrative management. That's where I learned to track KPIs, redesign processes (58% less execution time) and explain numbers to people who don't live in data every day.">Antes disso, passei quase 4 anos em gestão administrativo-financeira. Foi lá que aprendi a acompanhar KPIs, reestruturar processos (58% menos tempo de execução) e explicar números para quem não vive de dados.</p>
+<p data-en="I studied Chemical Engineering and Data Science, and I'm fluent in English (C2).">Estudei Engenharia Química e Ciência de Dados, e tenho inglês fluente (C2).</p>
+</div>
+<aside class="facts"><h3 data-en="At a glance">Em resumo</h3>
+<ul>
+<li data-en="Based in Recife, Brazil">Recife, Pernambuco</li>
+<li data-en="Data Science degree (UNOPAR)">Tecnóloga em Ciência de Dados (UNOPAR)</li>
+<li data-en="B.Sc. Chemical Engineering (UNINASSAU)">Bacharel em Engenharia Química (UNINASSAU)</li>
+<li data-en="English C2, Spanish and Turkish (elementary)">Inglês C2, espanhol e turco (elementar)</li>
+</ul></aside>
+</div></div></section>
+
+<section id="certificacoes"><div class="wrap">
+<h2 data-en="Certifications">Certificações</h2>
+<div class="grid">
+<div class="card hl"><h3>Databricks Certified Data Analyst Associate</h3><p data-en="Databricks certification for analytics on the Lakehouse platform.">Certificação Databricks para análise de dados na plataforma Lakehouse.</p></div>
+<div class="card"><h3>Data Warehouses Modernos – Snowflake</h3><p data-en="Data Engineering course, Alura.">Curso de Engenharia de Dados, Alura.</p></div>
+<div class="card"><h3>Do Zero ao Cientista de Dados</h3><p data-en="Treina Recife: statistics and Machine Learning with Python.">Treina Recife: estatística e Machine Learning com Python.</p></div>
+<div class="card"><h3>Claude Code 101</h3><p data-en="Development with AI coding assistants.">Desenvolvimento com assistentes de código por IA.</p></div>
+<div class="card"><h3>SQL e NoSQL para Devs Backend</h3><p data-en="Relational and non-relational databases.">Bancos de dados relacionais e não relacionais.</p></div>
+</div></div></section>
+
+<section id="habilidades" class="skills"><div class="wrap">
+<h2 data-en="Skills">Habilidades</h2>
+<h3 data-en="Languages">Linguagens</h3>
+<ul class="chips"><li>Python</li><li>SQL</li><li>PySpark</li><li>Pandas</li><li>Java / Spring Boot</li></ul>
+<h3 data-en="Data platforms and modeling">Plataformas e modelagem</h3>
+<ul class="chips"><li>Databricks</li><li>dbt</li><li>Snowflake</li><li>SQL Server</li><li data-en="Data modeling">Modelagem de dados</li></ul>
+<h3 data-en="BI and analysis">BI e análise</h3>
+<ul class="chips"><li>Power BI</li><li>Power BI Service</li><li>EDA</li><li data-en="Predictive modeling">Modelagem preditiva</li><li>Excel</li></ul>
+<h3 data-en="Engineering practices">Práticas de engenharia</h3>
+<ul class="chips"><li>Git / GitHub</li><li>CI/CD</li><li>Databricks Workflows</li><li data-en="Technical documentation">Documentação técnica</li></ul>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+<h2 data-en="Work Experience">Experiência</h2>
+<ol class="tl">
+<li><h3>Indicium AI</h3><div class="when" data-en="Data &amp; AI Apprentice · May 2026 to present">Lighthouser, Data &amp; AI Apprentice · mai/2026 até hoje</div>
+<ul>
+<li data-en="Data modeling and documentation with dbt, plus Power BI dashboards with testing and validation.">Modelagem e documentação com dbt, e dashboards em Power BI com testes e validação de dados.</li>
+<li data-en="Support for a decommissioning and governance project in Power BI Service, querying Snowflake.">Apoio a projeto de descomissionamento e governança no Power BI Service, com consultas em Snowflake.</li>
+</ul></li>
+<li><h3>Armorial Gestão</h3><div class="when" data-en="Financial &amp; Administrative Analyst · 2022 to 2026">Analista Administrativo Financeiro · jun/2022 a mai/2026</div>
+<ul>
+<li data-en="Tracked financial KPIs and produced management reports for leadership.">Acompanhamento de KPIs financeiros e relatórios gerenciais para a diretoria.</li>
+<li data-en="Redesigned a process from 2h to 50 min (−58%). 98% client satisfaction.">Reestruturação de processo de 2h para 50 min (−58%). 98% de satisfação dos clientes.</li>
+</ul></li>
+<li><h3>UFPE</h3><div class="when" data-en="Undergraduate researcher · 2017 to 2019">Iniciação científica · 2017 a 2019</div>
+<ul><li data-en="Predictive model with over 90% fit to experimental data, using Excel and Matlab.">Modelo preditivo com mais de 90% de aderência aos dados experimentais, em Excel e Matlab.</li></ul></li>
+</ol></div></section>
+
+<section id="portfolio"><div class="wrap">
+<h2>Portfolio</h2>
+<div class="grid">
+<div class="card hl"><h3 data-en="Consulting project: end-to-end data pipeline (simulated)">Projeto de consultoria: pipeline de dados ponta a ponta (simulado)</h3>
+<p data-en="Lighthouse program at Indicium. I acted as a consultant across the full flow: ingestion from SQL Server with Databricks and PySpark, an exchange-rate API, dbt modeling (including a bridge table), Power BI visualization, EDA and a Machine Learning model, orchestrated with Databricks Workflows.">Programa Lighthouse, Indicium. Atuei como consultora no fluxo completo: ingestão de SQL Server com Databricks e PySpark, API de câmbio, modelagem com dbt (incluindo tabela bridge), visualização em Power BI, EDA e modelo de Machine Learning, orquestrado com Databricks Workflows.</p>
+<ul class="chips"><li>Databricks</li><li>PySpark</li><li>dbt</li><li>Power BI</li><li>Machine Learning</li></ul></div>
+<div class="card"><h3>GitHub</h3><p data-en="Code and projects.">Código e projetos.</p><p><a href="https://github.com/iasminsantiago">github.com/iasminsantiago</a></p></div>
+<div class="card"><h3>Medium</h3><p data-en="Technical articles.">Artigos técnicos.</p><p><a href="https://medium.com/@iasminSantiago">medium.com/@iasminSantiago</a></p></div>
+</div></div></section>
+
+<section id="contato"><div class="wrap">
+<h2 data-en="Contact">Contato</h2>
+<p data-en="Open to Data Engineering and Analytics Engineering opportunities. Write to me:">Aberta a oportunidades em Engenharia de Dados e Analytics Engineering. Escreva para mim:</p>
+<div class="links">
+<a href="mailto:iasmin.santiago@gmail.com">Email<span>iasmin.santiago@gmail.com</span></a>
+<a href="https://www.linkedin.com/in/iasminsantiago">LinkedIn<span>linkedin.com/in/iasminsantiago</span></a>
+<a href="https://github.com/iasminsantiago">GitHub<span>github.com/iasminsantiago</span></a>
+<a href="https://medium.com/@iasminSantiago">Medium<span>medium.com/@iasminSantiago</span></a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Iasmin T. Santiago</div></footer>
+
+<script>
+(function(){
+var en=false,btn=document.getElementById('lang'),els=document.querySelectorAll('[data-en]');
+els.forEach(function(e){e.setAttribute('data-pt',e.innerHTML)});
+btn.addEventListener('click',function(){
+en=!en;
+els.forEach(function(e){e.innerHTML=e.getAttribute(en?'data-en':'data-pt')});
+document.documentElement.lang=en?'en':'pt-BR';
+btn.textContent=en?'PT':'EN';
+btn.setAttribute('aria-label',en?'Mudar idioma para português':'Switch language to English');
+});
+})();
+</script>
+</body>
+</html>
